@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from "react";
+import DisplayKey from "./Components/DisplayKey";
+import DisplayScale from "./Components/DisplayScale";
+import Init from "./Components/Init";
+import { Context } from "./Context/StateContext";
+import PageWrapper from "./Pages/PageWrapper";
 
 function App() {
+  console.log("%c App rendered! ", "background: #222; color: yellow");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageWrapper>
+      <Init />
+      <h1>Random Harmony </h1>
+      <hr />
+      <DisplayScale />
+      <hr />
+      <DisplayKey />
+    </PageWrapper>
   );
 }
 
