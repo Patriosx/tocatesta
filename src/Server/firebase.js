@@ -20,5 +20,5 @@ const majorScaleRef = collection(db, "major_scale");
 export async function getMajorScaleFirebase() {
   const q = await getDocs(majorScaleRef);
   const list = q.docs.map((doc) => doc.data());
-  console.log(list);
+  return list;
 }

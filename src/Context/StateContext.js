@@ -1,12 +1,12 @@
 import React, { useReducer } from "react";
 import ContextReducer from "./Reducer";
 import { createContext } from "react";
-
+import music_data from "../Server/db.json";
 export const Context = createContext();
 
 const StateContext = (props) => {
   const initialState = {
-    music_data: [],
+    music_data: music_data.music_data,
     scaleSelected: "",
     progressionSelected: "",
     keySelected: "",
@@ -14,11 +14,13 @@ const StateContext = (props) => {
   const [state, dispatch] = useReducer(ContextReducer, initialState);
 
   const getMusicData = async (data) => {
-    console.log("data", data);
+    // console.log("data", data);
+    /*
     dispatch({
       type: "GET_MUSICDATA",
-      payload: data,
+      payload: data, //music_data
     });
+    */
   };
 
   const updateScaleSelected = (scale) => {

@@ -7,11 +7,11 @@ const DisplayScale = () => {
   const { updateScaleSelected, scaleSelected, music_data } =
     useContext(Context);
   const { scales } = music_data;
-
+  console.log(scales);
   return (
     <div>
       <select onChange={(e) => updateScaleSelected(e.target.value)}>
-        <option value="">nada</option>
+        <option value="">scales</option>
         {scales?.map((scale, i) => {
           return (
             <option key={i} value={Object.keys(scale)}>
