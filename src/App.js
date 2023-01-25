@@ -1,8 +1,7 @@
-import { useContext, useEffect } from "react";
 import DisplayKey from "./Components/DisplayKey";
+import DisplayProgressions from "./Components/DisplayProgressions";
 import DisplayScale from "./Components/DisplayScale";
 import Init from "./Components/Init";
-import { Context } from "./Context/StateContext";
 import PageWrapper from "./Pages/PageWrapper";
 
 function App() {
@@ -15,6 +14,8 @@ function App() {
       <DisplayScale />
       <hr />
       <DisplayKey />
+      <hr />
+      <DisplayProgressions />
     </PageWrapper>
   );
 }

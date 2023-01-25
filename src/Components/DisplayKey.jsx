@@ -4,12 +4,14 @@ import { Context } from "../Context/StateContext";
 
 const DisplayKey = () => {
   const { keySelected, updateKeySelected, scaleSelected } = useContext(Context);
-  console.log(scaleSelected);
+  const onUpdateKeySelected = (e) => {
+    updateKeySelected(e.target.value);
+  };
   return (
     <div>
-      <select name="" id="">
+      <select onChange={onUpdateKeySelected}>
         <option value="">keys</option>
-        {Object.keys(keySelected).map((key) => {
+        {Object.keys(scaleSelected)?.map((key, i) => {
           return (
             <option value={key} key={key}>
               {key}
@@ -17,6 +19,10 @@ const DisplayKey = () => {
           );
         })}
       </select>
+
+      {scaleSelected[keySelected]?.map((key) => {
+        return <span key={key}>{key} </span>;
+      })}
     </div>
   );
 };

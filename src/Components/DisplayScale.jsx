@@ -4,23 +4,25 @@ import { Context } from "../Context/StateContext";
 
 const DisplayScale = () => {
   console.log("%c DisplayScale rendered! ", "background: #222; color: #68A357");
-  const { updateScaleSelected, scaleSelected, music_data } =
-    useContext(Context);
-  const { scales } = music_data;
-  console.log(scales);
+  const { updateScaleSelected, scales, cleanState } = useContext(Context);
+
+  const onUpdateScaleSelected = (e) => {
+    if (!e.target.value) cleanState();
+    else updateScaleSelected(e.target.value);
+  };
+
   return (
     <div>
-      <select onChange={(e) => updateScaleSelected(e.target.value)}>
+      <select onChange={onUpdateScaleSelected}>
         <option value="">scales</option>
-        {scales?.map((scale, i) => {
+        {Object.keys(scales)?.map((scale, i) => {
           return (
-            <option key={i} value={Object.keys(scale)}>
-              {Object.keys(scale)}
+            <option key={i} value={scale}>
+              {scale}
             </option>
           );
         })}
       </select>
-      <span>{scaleSelected}</span>
     </div>
   );
 };
