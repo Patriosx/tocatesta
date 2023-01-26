@@ -1,10 +1,20 @@
 import React, { useContext, useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 import { Context } from "../Context/StateContext";
 
 const WriteProgression = () => {
   const { keySelected } = useContext(Context);
   const [progression, setProgression] = useState([]);
   const [valor, setValor] = useState(1);
+  const [disableInput, setDisableInput] = useState(true);
+  useEffect(() => {
+    if (keySelected.length === 0) {
+      handleClear();
+      setDisableInput(true);
+    } else {
+      setDisableInput(false);
+    }
+  }, [keySelected]);
 
   const addInterval = (e) => {
     e.preventDefault();
@@ -26,19 +36,22 @@ const WriteProgression = () => {
           min={1}
           name={valor}
           onChange={handleValor}
+          disabled={disableInput}
         />
+        <button type="reset" onClick={handleClear}>
+          Clear
+        </button>
       </form>
-      <button onClick={handleClear}>Clear</button>
       <p>
         Progression:
         {progression.map((interval, i) => {
-          return <span>{interval}</span>;
+          return <span key={i}>{interval}</span>;
         })}
       </p>
       <p>
         Keys:
         {progression.map((interval, i) => {
-          return <span> {keySelected[interval - 1]} </span>;
+          return <span key={i}> {keySelected[interval - 1]} </span>;
         })}
       </p>
     </div>

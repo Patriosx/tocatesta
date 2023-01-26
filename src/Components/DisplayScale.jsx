@@ -7,7 +7,8 @@ const DisplayScale = () => {
   const { updateScaleSelected, scales, cleanState } = useContext(Context);
 
   const onUpdateScaleSelected = (e) => {
-    if (!e.target.value) cleanState();
+    cleanState();
+    if (!e.target.value) return;
     else updateScaleSelected(e.target.value);
   };
 
