@@ -18,6 +18,11 @@ export default function reducer(state, action) {
         ...state,
         keySelected: action.payload,
       };
+    case "STYLE_SELECTED":
+      return {
+        ...state,
+        styleSelected: action.payload,
+      };
     case "PROGRESSION_SELECTED":
       return {
         ...state,

@@ -9,9 +9,10 @@ const StateContext = (props) => {
     music_data: music_data.music_data,
     scales: music_data.music_data.scales,
     progressions: music_data.music_data.progressions,
-    scaleSelected: {},
-    progressionSelected: {},
-    keySelected: {},
+    scaleSelected: [],
+    styleSelected: "",
+    progressionSelected: [],
+    keySelected: [],
   };
   const [state, dispatch] = useReducer(ContextReducer, initialState);
 
@@ -43,13 +44,21 @@ const StateContext = (props) => {
   const updateKeySelected = (key) => {
     dispatch({
       type: "KEY_SELECTED",
-      payload: key,
+      payload: state.scaleSelected[key],
     });
   };
   const updateProgressionSelected = (progression) => {
+    const arrayProgression = progression.split(",");
+
     dispatch({
       type: "PROGRESSION_SELECTED",
-      payload: progression,
+      payload: arrayProgression,
+    });
+  };
+  const updateStyleSelected = (style) => {
+    dispatch({
+      type: "STYLE_SELECTED",
+      payload: style,
     });
   };
 
@@ -60,10 +69,12 @@ const StateContext = (props) => {
         scales: state.scales,
         progressions: state.progressions,
         scaleSelected: state.scaleSelected,
+        styleSelected: state.styleSelected,
         progressionSelected: state.progressionSelected,
         keySelected: state.keySelected,
         getMusicData,
         cleanState,
+        updateStyleSelected,
         updateScaleSelected,
         updateKeySelected,
         updateProgressionSelected,

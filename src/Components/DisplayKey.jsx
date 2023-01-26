@@ -20,9 +20,9 @@ const DisplayKey = () => {
         })}
       </select>
 
-      {scaleSelected[keySelected]?.map((key) => {
+      {/* {keySelected?.map((key) => {
         return <span key={key}>{key} </span>;
-      })}
+      })} */}
     </div>
   );
 };

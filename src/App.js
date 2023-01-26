@@ -1,7 +1,9 @@
+import DisplayHarmony from "./Components/DisplayHarmony";
 import DisplayKey from "./Components/DisplayKey";
 import DisplayProgressions from "./Components/DisplayProgressions";
 import DisplayScale from "./Components/DisplayScale";
 import Init from "./Components/Init";
+import WriteProgression from "./Components/WriteProgression";
 import PageWrapper from "./Pages/PageWrapper";
 
 function App() {
@@ -16,6 +18,10 @@ function App() {
       <DisplayKey />
       <hr />
       <DisplayProgressions />
+      <hr />
+      <DisplayHarmony />
+      <hr />
+      <WriteProgression />
     </PageWrapper>
   );
 }

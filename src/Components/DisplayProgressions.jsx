@@ -3,20 +3,45 @@ import { useContext } from "react/cjs/react.development";
 import { Context } from "../Context/StateContext";
 
 const DisplayProgressions = () => {
-  const { scaleSelected, updateProgressionSelected, progressions } =
-    useContext(Context);
+  const {
+    updateStyleSelected,
+    updateProgressionSelected,
+    styleSelected,
+    progressions,
+  } = useContext(Context);
+
+  const onUpdateStyleSelected = (e) => {
+    updateStyleSelected(e.target.value);
+  };
+  const onUpdateProgressionSelected = (e) => {
+    updateProgressionSelected(e.target.value);
+  };
   return (
     <div>
-      <select>
-        <option value="">progressions</option>
-        {Object.keys(progressions)?.map((scale, i) => {
-          return (
-            <option key={i} value={scale}>
-              {scale}
-            </option>
-          );
-        })}
-      </select>
+      <div>
+        <select onChange={onUpdateStyleSelected}>
+          <option value="">style</option>
+          {Object.keys(progressions)?.map((style, i) => {
+            return (
+              <option key={style} value={style}>
+                {style}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+      <div>
+        <select onChange={onUpdateProgressionSelected}>
+          <option value="">progressions</option>
+          {progressions[styleSelected]?.map((prog, i) => {
+            return (
+              <option key={i} value={prog}>
+                {prog}
+              </option>
+            );
+          })}
+        </select>
+      </div>
     </div>
   );
 };
