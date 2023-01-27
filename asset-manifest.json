@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/tocatesta/static/js/main.c07c6713.js",
+    "main.js": "/tocatesta/static/js/main.f031c761.js",
     "index.html": "/tocatesta/index.html",
-    "main.c07c6713.js.map": "/tocatesta/static/js/main.c07c6713.js.map"
+    "main.f031c761.js.map": "/tocatesta/static/js/main.f031c761.js.map"
   },
   "entrypoints": [
-    "static/js/main.c07c6713.js"
+    "static/js/main.f031c761.js"
   ]
 }
