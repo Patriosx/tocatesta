@@ -3,7 +3,7 @@ import { useContext } from "react/cjs/react.development";
 import { Context } from "../Context/StateContext";
 
 const DisplayKey = () => {
-  const { keySelected, updateKeySelected, scaleSelected } = useContext(Context);
+  const { updateKeySelected, scaleSelected } = useContext(Context);
   const onUpdateKeySelected = (e) => {
     updateKeySelected(e.target.value);
   };
