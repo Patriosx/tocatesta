@@ -7,6 +7,7 @@ const WriteProgression = () => {
   const [progression, setProgression] = useState([]);
   const [valor, setValor] = useState(1);
   const [disableInput, setDisableInput] = useState(true);
+
   useEffect(() => {
     if (keySelected.length === 0) {
       handleClear();
@@ -38,7 +39,7 @@ const WriteProgression = () => {
           onChange={handleValor}
           disabled={disableInput}
         />
-        <button type="reset" onClick={handleClear}>
+        <button disabled={disableInput} type="reset" onClick={handleClear}>
           Clear
         </button>
       </form>

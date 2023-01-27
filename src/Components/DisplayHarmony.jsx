@@ -5,13 +5,13 @@ const DisplayHarmony = () => {
   const { progressionSelected, keySelected } = useContext(Context);
   return (
     <div>
-      <div>progression: {progressionSelected}</div>
       <div>
         Scale:
         {keySelected?.map((key) => {
           return <span key={key}>{key} </span>;
         })}
       </div>
+      <div>progression: {progressionSelected}</div>
       <div>
         {progressionSelected?.map((interval, i) => {
           return <span key={i}>{keySelected[interval - 1]} </span>;
