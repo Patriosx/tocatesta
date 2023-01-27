@@ -6,16 +6,22 @@ const DisplayHarmony = () => {
   return (
     <div>
       <div>
-        Scale:
+        <strong>Scale: </strong>
+
         {keySelected?.map((key) => {
           return <span key={key}>{key} </span>;
         })}
       </div>
-      <div>progression: {progressionSelected}</div>
       <div>
-        {progressionSelected?.map((interval, i) => {
-          return <span key={i}>{keySelected[interval - 1]} </span>;
-        })}
+        <strong>Progression: </strong>
+        <span>{progressionSelected}</span>
+      </div>
+      <div>
+        <h4>
+          {progressionSelected?.map((interval, i) => {
+            return <span key={i}>{keySelected[interval - 1]} </span>;
+          })}
+        </h4>
       </div>
     </div>
   );

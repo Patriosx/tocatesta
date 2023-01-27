@@ -29,27 +29,35 @@ const WriteProgression = () => {
   return (
     <div>
       <form action="" onSubmit={addInterval}>
-        Progression:
-        <input
-          type="number"
-          max={7}
-          min={1}
-          name={valor}
-          onChange={handleValor}
-          disabled={disableInput}
-        />
-        <button disabled={disableInput} type="reset" onClick={handleClear}>
-          Clear
-        </button>
+        <div className="grid">
+          <div>
+            <strong>Progression:</strong>
+          </div>
+          <div>
+            <input
+              type="number"
+              max={7}
+              min={1}
+              name={valor}
+              onChange={handleValor}
+              disabled={disableInput}
+            />
+          </div>
+          <div>
+            <button disabled={disableInput} type="reset" onClick={handleClear}>
+              Clear
+            </button>
+          </div>
+        </div>
       </form>
       <p>
-        Progression:
+        <strong>Progression:</strong>
         {progression.map((interval, i) => {
           return <span key={i}>{interval}</span>;
         })}
       </p>
       <p>
-        Keys:
+        <strong>Keys:</strong>
         {progression.map((interval, i) => {
           return <span key={i}> {keySelected[interval - 1]} </span>;
         })}

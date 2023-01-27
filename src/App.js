@@ -11,16 +11,13 @@ function App() {
   return (
     <PageWrapper>
       <Init />
-      <h1>Random Harmony </h1>
-      <hr />
+      <h2>Random Harmony </h2>
+
       <DisplayScale />
-      <hr />
       <DisplayKey />
-      <hr />
       <DisplayProgressions />
-      <hr />
+
       <DisplayHarmony />
-      <hr />
       <WriteProgression />
     </PageWrapper>
   );

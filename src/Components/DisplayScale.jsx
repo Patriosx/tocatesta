@@ -8,7 +8,8 @@ const DisplayScale = () => {
   const onUpdateScaleSelected = (e) => {
     cleanState();
     if (!e.target.value) return;
-    else updateScaleSelected(e.target.value);
+
+    updateScaleSelected(e.target.value);
   };
 
   return (
