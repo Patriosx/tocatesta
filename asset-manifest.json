@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/tocatesta/static/js/main.f031c761.js",
+    "main.css": "/tocatesta/static/css/main.9862d411.css",
+    "main.js": "/tocatesta/static/js/main.253c9357.js",
     "index.html": "/tocatesta/index.html",
-    "main.f031c761.js.map": "/tocatesta/static/js/main.f031c761.js.map"
+    "main.9862d411.css.map": "/tocatesta/static/css/main.9862d411.css.map",
+    "main.253c9357.js.map": "/tocatesta/static/js/main.253c9357.js.map"
   },
   "entrypoints": [
-    "static/js/main.f031c761.js"
+    "static/css/main.9862d411.css",
+    "static/js/main.253c9357.js"
   ]
 }
