@@ -4,7 +4,7 @@
   "homepage": "https://patriosx.github.io/tocatesta",
   "private": true,
   "dependencies": {
-    "@picocss/pico": "^1.5.6",
+    "@picocss/pico": "^1.5.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

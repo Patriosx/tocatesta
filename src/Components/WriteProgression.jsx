@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../Context/StateContext";
 
@@ -29,10 +30,10 @@ const WriteProgression = () => {
   return (
     <div>
       <form action="" onSubmit={addInterval}>
-        <div className="grid">
-          <div>
-            <strong>Progression:</strong>
-          </div>
+        <div>
+          <strong>Add Intervals:</strong>
+        </div>
+        <div className="container-writeprog">
           <div>
             <input
               type="number"
@@ -44,9 +45,28 @@ const WriteProgression = () => {
             />
           </div>
           <div>
-            <button disabled={disableInput} type="reset" onClick={handleClear}>
-              Clear
-            </button>
+            <a
+              href="#"
+              role={"button"}
+              class="primary btn"
+              disabled={disableInput}
+              type="reset"
+              onClick={addInterval}
+            >
+              Add
+            </a>
+          </div>
+          <div>
+            <a
+              href="#"
+              role="button"
+              class="secondary btn"
+              disabled={disableInput}
+              type="reset"
+              onClick={handleClear}
+            >
+              Reset
+            </a>
           </div>
         </div>
       </form>

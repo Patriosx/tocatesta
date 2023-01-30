@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  margin: 0;
+}
+input {
+  margin: 0 !important;
+}
+html,
+body {
+  height: 100vw;
+  width: 100%;
+}
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.main-container {
+  margin: 0;
+  max-width: 450px;
+  width: 100%;
+}
+.container-writeprog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 100%; */
+}
+.btn {
+  padding: 0.5rem 2rem;
+}
+@media (max-width: 450px) {
+  main {
+    display: block;
+  }
+  .main-container {
+    height: 100%;
+  }
+}
