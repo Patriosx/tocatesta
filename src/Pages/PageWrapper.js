@@ -3,22 +3,26 @@ import Title from "../Components/Title";
 
 const PageWrapper = (props) => {
   const [theme, setTheme] = useState("light");
+  const toggleTheme = theme === "light" ? "dark" : "light";
   const handleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
   return (
     <main data-theme={theme}>
-      {/* <div>
-        <a href="#" role="button" className="outline" onClick={handleTheme}>
-          Light
-        </a>
-        <a href="#" role="button" className="contrast" onClick={handleTheme}>
-          Dark
-        </a>
-      </div> */}
-
       <article className="main-container">
-        <Title title={"Random Harmony"} />
+        <div className="header">
+          <Title title={"Random Harmony"} />
+          <div className="theme-container">
+            <span
+              className="btn-theme"
+              onClick={handleTheme}
+              style={{
+                backgroundColor: `${theme === "light" ? "black" : "white"}`,
+              }}
+            ></span>
+            <p style={{ color: `${toggleTheme}` }}>{toggleTheme}</p>
+          </div>
+        </div>
         {props.children}
       </article>
     </main>

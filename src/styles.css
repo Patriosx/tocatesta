@@ -8,33 +8,52 @@ input {
 }
 html,
 body {
-  height: 100vw;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.theme-container {
+  display: flex;
+  flex-direction: column;
+}
+.theme-container p {
+  font-size: small;
+}
+.btn-theme {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 main {
   display: grid;
   place-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
+/* Article */
 .main-container {
   margin: 0;
   max-width: 450px;
   width: 100%;
+  min-height: 100vh;
 }
 .container-writeprog {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 100%; */
 }
-.btn {
-  padding: 0.5rem 2rem;
-}
+
 @media (max-width: 450px) {
   main {
     display: block;
   }
   .main-container {
-    height: 100%;
+    /* height: max-content; */
   }
 }

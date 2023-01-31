@@ -29,59 +29,65 @@ const WriteProgression = () => {
   };
   return (
     <div>
-      <form action="" onSubmit={addInterval}>
+      <details>
+        <summary>Create a Progression</summary>
+
+        <form action="" onSubmit={addInterval}>
+          <div>
+            <strong>Add Intervals:</strong>
+          </div>
+          <div className="container-writeprog">
+            <div>
+              <input
+                type="number"
+                max={7}
+                min={1}
+                name={valor}
+                onChange={handleValor}
+                disabled={disableInput}
+              />
+            </div>
+            <div>
+              <a
+                href="#"
+                role={"button"}
+                class="primary btn"
+                disabled={disableInput}
+                type="reset"
+                onClick={addInterval}
+              >
+                Add
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                role="button"
+                class="secondary btn"
+                disabled={disableInput}
+                type="reset"
+                onClick={handleClear}
+              >
+                Reset
+              </a>
+            </div>
+          </div>
+        </form>
         <div>
-          <strong>Add Intervals:</strong>
+          <p>
+            <strong>Progression:</strong>
+            {progression.map((interval, i) => {
+              return <span key={i}>{interval}</span>;
+            })}
+          </p>
+          <p>
+            <strong>Keys:</strong>
+            {progression.map((interval, i) => {
+              return <span key={i}> {keySelected[interval - 1]} </span>;
+            })}
+          </p>
         </div>
-        <div className="container-writeprog">
-          <div>
-            <input
-              type="number"
-              max={7}
-              min={1}
-              name={valor}
-              onChange={handleValor}
-              disabled={disableInput}
-            />
-          </div>
-          <div>
-            <a
-              href="#"
-              role={"button"}
-              class="primary btn"
-              disabled={disableInput}
-              type="reset"
-              onClick={addInterval}
-            >
-              Add
-            </a>
-          </div>
-          <div>
-            <a
-              href="#"
-              role="button"
-              class="secondary btn"
-              disabled={disableInput}
-              type="reset"
-              onClick={handleClear}
-            >
-              Reset
-            </a>
-          </div>
-        </div>
-      </form>
-      <p>
-        <strong>Progression:</strong>
-        {progression.map((interval, i) => {
-          return <span key={i}>{interval}</span>;
-        })}
-      </p>
-      <p>
-        <strong>Keys:</strong>
-        {progression.map((interval, i) => {
-          return <span key={i}> {keySelected[interval - 1]} </span>;
-        })}
-      </p>
+      </details>
     </div>
   );
 };

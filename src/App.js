@@ -16,7 +16,6 @@ function App() {
       <DisplayScale />
       <DisplayKey />
       <DisplayProgressions />
-
       <DisplayHarmony />
       <WriteProgression />
     </PageWrapper>
